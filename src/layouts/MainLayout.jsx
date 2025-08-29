@@ -5,14 +5,22 @@ export default function MainLayout() {
   return (
     <>
       <div className="layout">
-        <header>Header</header>
+        <header>
+          <h1>Online Store</h1>
+        </header>
         <div className="layout-body">
-          <aside>Filters</aside>
+          <aside>
+            <h2>Filters</h2>
+            <ul>
+              <li>Price</li>
+              <li>Category</li>
+            </ul>
+          </aside>
           <main>
             <Outlet />
           </main>
         </div>
-        <footer>Footer</footer>
+        <footer>© 2025 Online Store. All rights reserved.</footer>
       </div>
     </>
   );

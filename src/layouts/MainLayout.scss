@@ -1,0 +1,40 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header {
+    background: #222;
+    color: #fff;
+    padding: 1rem 2rem;
+  }
+
+  .layout-body {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  aside {
+    width: 250px;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  main {
+    flex: 1;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+}
