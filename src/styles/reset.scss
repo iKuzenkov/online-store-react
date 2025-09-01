@@ -60,7 +60,6 @@ button {
 
 html {
   height: 100%;
-  scrollbar-gutter: stable;
 }
 
 html {
@@ -107,4 +106,17 @@ svg * {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
