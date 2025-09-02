@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./MainLayout.scss";
 
 export default function MainLayout() {
@@ -7,6 +7,10 @@ export default function MainLayout() {
       <div className="layout">
         <header>
           <h1>Online Store</h1>
+          <nav>
+            <Link to="/">Home</Link> | <Link to="products">Products</Link> |{" "}
+            <Link to="catalog">Catalog</Link> | <Link to="cart">Cart</Link>
+          </nav>
         </header>
         <div className="layout-body">
           <aside>
