@@ -1,10 +1,17 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cart/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  removeFromCart,
+  decreaseQuantity,
+} from "../../features/cart/CartSlice";
 import "./ProductCard.scss";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((item) => item.id === product.id)
+  );
 
   return (
     <>
@@ -14,11 +21,23 @@ function ProductCard({ product }) {
           alt={product.name}
         />
         <h2>{product.name}</h2>
-        <p>Price: {product.price}$</p>
-        <p>Category: {product.category}</p>
-        <button onClick={() => dispatch(addToCart(product))}>
-          Add to Cart
-        </button>
+        <p>Price: {product.price}</p>
+        <p>Caregory: {product.category}</p>
+        {!cartItem ? (
+          <button onClick={() => dispatch(addToCart(product))}>
+            Add to Cart
+          </button>
+        ) : (
+          <div>
+            <button onClick={() => dispatch(decreaseQuantity(product.id))}>
+              -
+            </button>
+            <button onClick={() => dispatch(addToCart(product))}>+</button>
+            <button onClick={() => dispatch(removeFromCart(product.id))}>
+              Remove
+            </button>
+          </div>
+        )}
       </article>
     </>
   );
