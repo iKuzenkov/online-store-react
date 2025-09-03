@@ -3,8 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import ProductsPage from "../pages/productsPage/ProductsPage";
 import Catalog from "../pages/Catalog";
-import Cart from "../pages/Cart";
-
+import Cart from "../pages/cart/Cart";
 function App() {
   return (
     <>
