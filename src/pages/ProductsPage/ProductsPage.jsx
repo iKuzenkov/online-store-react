@@ -1,11 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectProducts } from "../../features/products/ProductsSlice";
 import ProductCard from "../../components/productCard/ProductCard";
 import "./ProductsPage.scss";
 
 function ProductsPage() {
-  const products = useSelector(selectProducts);
+  const products = useSelector((state) => state.products.items);
   return (
     <>
       <main className="product-page">
