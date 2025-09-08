@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+
+  &__btn {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__page {
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &.is-active {
+      background: #222;
+      color: #fff;
+      border-color: #222;
+    }
+  }
+
+  &__dots {
+    padding: 0 6px;
+    color: #666;
+  }
+}
