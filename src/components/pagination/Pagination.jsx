@@ -38,7 +38,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
 
   return (
     <>
-      <nav className="pagination" aria-lable="Pagination">
+      <nav className="pagination" aria-label="Pagination">
         <button
           className="pagination_btn"
           onClick={() => handleClick(currentPage - 1)}
