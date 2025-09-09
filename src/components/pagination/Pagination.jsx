@@ -58,18 +58,16 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
         )}
 
         {range.map((p) => (
-          <>
-            <button
-              key={p}
-              className={`pagination_page ${
-                p === currentPage ? "is-active" : ""
-              }`}
-              onClick={() => handleClick(p)}
-              aria-current={p === currentPage ? "page" : undefined}
-            >
-              {p}
-            </button>
-          </>
+          <button
+            key={p}
+            className={`pagination_page ${
+              p === currentPage ? "is-active" : ""
+            }`}
+            onClick={() => handleClick(p)}
+            aria-current={p === currentPage ? "page" : undefined}
+          >
+            {p}
+          </button>
         ))}
 
         {range[range.length - 1] < totalPages && (
