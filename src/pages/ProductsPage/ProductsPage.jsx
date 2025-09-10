@@ -3,11 +3,12 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../components/productCard/ProductCard";
 import Pagination from "../../components/pagination/Pagination";
+import Filter from "../../components/filter/Filters";
+import Sort from "../../components/sort/Sort";
 import "./ProductsPage.scss";
 
 function ProductsPage() {
   const products = useSelector((state) => state.products.items) || [];
-
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialPage = Number(searchParams.get("page") || 1);
@@ -16,7 +17,29 @@ function ProductsPage() {
   const [page, setPage] = useState(initialPage);
   const [pageSize, setPageSize] = useState(initialPageSize);
 
-  const totalPages = Math.max(1, Math.ceil(products.length / pageSize));
+  const [category, setCategory] = useState("all");
+  const [sortBy, setSortBy] = useState("name");
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((p) =>
+      category === "all" ? true : p.category === category
+    );
+  }, [products, category]);
+
+  const sortedProducts = useMemo(() => {
+    return [...filteredProducts].sort((a, b) => {
+      if (sortBy === "price") return a.price - b.price;
+      return a.name.localeCompare(b.name);
+    });
+  }, [filteredProducts, sortBy]);
+
+  const totalPages = Math.max(1, Math.ceil(sortedProducts.length / pageSize));
+
+  const visibleProducts = useMemo(() => {
+    const startIdx = (page - 1) * pageSize;
+    const endIdx = page * pageSize;
+    return sortedProducts.slice(startIdx, endIdx);
+  }, [sortedProducts, page, pageSize]);
 
   useEffect(() => {
     if (page > totalPages) {
@@ -30,12 +53,6 @@ function ProductsPage() {
     if (pageSize !== 6) params.size = pageSize;
     setSearchParams(params);
   }, [page, pageSize, setSearchParams]);
-
-  const visibleProducts = useMemo(() => {
-    const startIdx = (page - 1) * pageSize;
-    const endIdx = page * pageSize;
-    return products.slice(startIdx, endIdx);
-  }, [products, page, pageSize]);
 
   return (
     <main className="product-page">
@@ -58,8 +75,24 @@ function ProductsPage() {
           </select>
         </label>
 
+        <Filter
+          value={category}
+          onChange={(val) => {
+            setCategory(val);
+            setPage(1);
+          }}
+        />
+
+        <Sort
+          value={sortBy}
+          onChange={(val) => {
+            setSortBy(val);
+            setPage(1);
+          }}
+        />
+
         <div className="product-page__count">
-          {products.length} item{products.length === 1 ? "" : "s"}
+          {sortedProducts.length} item{sortedProducts.length === 1 ? "" : "s"}
         </div>
       </div>
 
