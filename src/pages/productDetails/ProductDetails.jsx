@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/CartSlice";
 
@@ -26,6 +26,9 @@ function ProductsDetails() {
       <p>Category: {product.category}</p>
       <p>Price: {product.price}</p>
       <p>Description: {product.description || "No description yet."}</p>
+      <Link to="/products">
+        <button>Back to Products</button>
+      </Link>
       <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
     </main>
   );

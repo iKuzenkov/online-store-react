@@ -5,6 +5,7 @@ import {
   removeFromCart,
   decreaseQuantity,
 } from "../../features/cart/CartSlice";
+import { Link } from "react-router-dom";
 import "./ProductCard.scss";
 
 function ProductCard({ product }) {
@@ -16,11 +17,14 @@ function ProductCard({ product }) {
   return (
     <>
       <article className="product-card">
-        <img
-          src={product.image || "https://via.placeholder.com/200"}
-          alt={product.name}
-        />
-        <h2>{product.name}</h2>
+        <Link to={`/products/${product.id}`}>
+          <img
+            src={product.image || "https://via.placeholder.com/200"}
+            alt={product.name}
+          />
+          <h2>{product.name}</h2>
+        </Link>
+
         <p>Price: {product.price}</p>
         <p>Caregory: {product.category}</p>
         {!cartItem ? (
