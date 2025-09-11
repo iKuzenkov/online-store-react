@@ -13,17 +13,17 @@
     color: #555;
   }
 
-  //   &__cta {
-  //     display: inline-block;
-  //     padding: 10px 20px;
-  //     border-radius: 8px;
-  //     background: #007bff;
-  //     color: #fff;
-  //     text-decoration: none;
-  //     transition: background 0.2 ease;
+  &__cta {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2 ease;
 
-  //     &:hover {
-  //       background: #0056b3;
-  //     }
-  //   }
+    &:hover {
+      background: #0056b3;
+    }
+  }
 }

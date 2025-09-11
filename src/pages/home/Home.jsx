@@ -7,7 +7,7 @@ function Home() {
     <main className="home">
       <h1>Welcome to Our Store</h1>
       <p>Find the best products at the best prices.</p>
-      <Link to="/products" className="home_cta">
+      <Link to="/products" className="home__cta">
         Browse Products
       </Link>
     </main>
