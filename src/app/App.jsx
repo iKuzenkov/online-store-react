@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import ProductsPage from "../pages/productsPage/ProductsPage";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import Catalog from "../pages/Catalog";
-import Cart from "../pages/cart/Cart";
+import Cart from "../pages/cart/CartPage";
 function App() {
   return (
     <>
