@@ -3,6 +3,9 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
 import ProductsPage from "../pages/productsPage/ProductsPage";
 import ProductDetails from "../pages/productDetails/ProductDetails";
+import LoginPage from "../pages/login-page/LoginPage";
+import RegisterPage from "../pages/register/RegisterPage";
+import PrivateRoute from "../components/private-route/PrivateRoute";
 import Catalog from "../pages/Catalog";
 import Cart from "../pages/cart/CartPage";
 function App() {
@@ -15,7 +18,16 @@ function App() {
             <Route path="products" element={<ProductsPage />} />
             <Route path="products/:id" element={<ProductDetails />} />
             <Route path="catalog" element={<Catalog />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="register" element={<RegisterPage />} />
+            <Route
+              path="cart"
+              element={
+                <PrivateRoute>
+                  <Cart />
+                </PrivateRoute>
+              }
+            />
           </Route>
         </Routes>
       </Router>

@@ -1,0 +1,61 @@
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, clearError } from "../../features/auth/AuthSlice";
+import { useNavigate, Link } from "react-router-dom";
+
+function LoginPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user, error } = useSelector((state) => state.auth);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (user) navigate("/");
+  }, [user, navigate]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login({ email, password }));
+  };
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearError());
+    };
+  }, [dispatch]);
+
+  return (
+    <main>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:{" "}
+          <input
+            type="email"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+        <label>
+          Password:{" "}
+          <input
+            type="password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        {error && <p style={{ color: "red" }}></p>}
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
+      </p>
+    </main>
+  );
+}
+
+export default LoginPage;
