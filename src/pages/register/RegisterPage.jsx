@@ -40,40 +40,45 @@ function RegisterPage() {
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Email{" "}
+          Email:{" "}
           <input
+            id="email"
+            name="email"
             type="email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
+        <hr />
         <label>
-          {" "}
-          Password (min 6 chars){" "}
+          Password (min 6 chars):{" "}
           <input
+            id="password"
+            name="password"
             type="password"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+        <hr />
         <label>
           Confirm Password:{" "}
           <input
+            id="confirm-password"
+            name="confirm-password"
             type="password"
             value={password}
             required
             onChange={(e) => setConfirm(e.target.value)}
           />
         </label>
+        <hr />
         {localError && <p style={{ color: "red" }}>{localError}</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit">Register</button>
       </form>
-      <p>
-        Already have an accaunt? <Link to="/login">Login</Link>
-      </p>
     </main>
   );
 }
