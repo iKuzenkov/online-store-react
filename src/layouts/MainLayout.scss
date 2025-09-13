@@ -4,36 +4,82 @@
   min-height: 100vh;
 
   header {
-    background: #222;
+    background: #333;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1rem;
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .auth-info {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        span {
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+
+        button {
+          background: #ff4d4f;
+          color: #fff;
+          border: none;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.85rem;
+
+          &:hover {
+            background: #d9363e;
+          }
+        }
+
+        .login-btn {
+          background: #1890ff;
+          color: #fff;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          font-size: 0.85rem;
+
+          &:hover {
+            background: #40a9ff;
+          }
+        }
+      }
+    }
   }
 
   .layout-body {
+    display: flex;
     flex: 1;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 1rem;
-    padding: 1rem 2rem;
-  }
 
-  aside {
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  main {
-    padding: 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    main {
+      flex: 1;
+      padding: 1rem;
+    }
   }
 
   footer {
-    background: #222;
-    color: #fff;
+    background: #f1f1f1;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
   }
 }

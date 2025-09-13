@@ -1,31 +1,41 @@
 import { Link, Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../features/auth/AuthSlice";
 import "./MainLayout.scss";
 
-export default function MainLayout() {
+function MainLayout() {
+  const { user } = useSelector((state) => state.auth) || {};
+  const dispatch = useDispatch();
+
   return (
-    <>
-      <div className="layout">
-        <header>
-          <h1>Online Store</h1>
-          <nav>
-            <Link to="/">Home</Link> | <Link to="products">Products</Link> |{" "}
-            <Link to="catalog">Catalog</Link> | <Link to="cart">Cart</Link>
-          </nav>
-        </header>
-        <div className="layout-body">
-          <aside>
-            <h2>Filters</h2>
-            <ul>
-              <li>Price</li>
-              <li>Category</li>
-            </ul>
-          </aside>
-          <main>
-            <Outlet />
-          </main>
-        </div>
-        <footer>© 2025 Online Store. All rights reserved.</footer>
+    <div className="layout">
+      <header>
+        <h1>Online Store</h1>
+        <nav>
+          <Link to="/">Home</Link> |<Link to="products">Products</Link> |{" "}
+          <Link to="catalog">Catalog</Link> |<Link to="cart">Cart</Link>
+          <div className="auth-info">
+            {user ? (
+              <>
+                <span>Hello, {user.email}</span>
+                <button onClick={() => dispatch(logout())}>Logout</button>
+              </>
+            ) : (
+              <Link className="login-btn" to="auth">
+                Login / Register
+              </Link>
+            )}
+          </div>
+        </nav>
+      </header>
+      <div className="layout-body">
+        <main>
+          <Outlet />
+        </main>
       </div>
-    </>
+      <footer>© 2025 Online Store. All rights reserved.</footer>
+    </div>
   );
 }
+
+export default MainLayout;
