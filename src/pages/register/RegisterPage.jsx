@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { register, clearError } from "../../features/auth/AuthSlice";
 import { useNavigate, Link } from "react-router-dom";
+import "../auth/AuthForm.scss";
 
 function RegisterPage() {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ function RegisterPage() {
   return (
     <main>
       <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}>
         <label>
           Email:{" "}
           <input
@@ -50,7 +51,6 @@ function RegisterPage() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <hr />
         <label>
           Password (min 6 chars):{" "}
           <input
@@ -62,21 +62,21 @@ function RegisterPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <hr />
         <label>
           Confirm Password:{" "}
           <input
             id="confirm-password"
             name="confirm-password"
             type="password"
-            value={password}
+            value={confirm}
             required
             onChange={(e) => setConfirm(e.target.value)}
           />
         </label>
-        <hr />
-        {localError && <p style={{ color: "red" }}>{localError}</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {localError && (
+          <p style={{ color: "red", fontSize: "0.85rem" }}>{localError}</p>
+        )}
+        {error && <p style={{ color: "red", fontSize: "0.85rem" }}>{error}</p>}
         <button type="submit">Register</button>
       </form>
     </main>

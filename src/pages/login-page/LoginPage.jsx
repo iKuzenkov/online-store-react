@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, clearError } from "../../features/auth/AuthSlice";
 import { useNavigate, Link } from "react-router-dom";
-import "./LoginPage.scss";
+import "../auth/AuthForm.scss";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function LoginPage() {
   return (
     <main className="login-page">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}>
         <label>
           Email:{" "}
           <input
@@ -40,7 +40,6 @@ function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <hr />
         <label>
           Password:{" "}
           <input
@@ -50,8 +49,7 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <hr />
-        {error && <p style={{ color: "red" }}></p>}
+        {error && <p style={{ color: "red", fontSize: "0.85rem" }}></p>}
         <button type="submit">Login</button>
       </form>
     </main>
