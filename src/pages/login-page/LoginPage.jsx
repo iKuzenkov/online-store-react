@@ -49,7 +49,11 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        {error && <p style={{ color: "red", fontSize: "0.85rem" }}></p>}
+        {error && (
+          <p style={{ color: "red", fontSize: "0.85rem" }}>
+            The user does not exist. Registration is required.
+          </p>
+        )}
         <button type="submit">Login</button>
       </form>
     </main>

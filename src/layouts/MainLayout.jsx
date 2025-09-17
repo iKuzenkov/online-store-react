@@ -13,12 +13,15 @@ function MainLayout() {
         <h1>Online Store</h1>
         <nav>
           <Link to="/">Home</Link> |<Link to="products">Products</Link> |{" "}
-          <Link to="catalog">Catalog</Link> |<Link to="cart">Cart</Link>
+          <Link to="catalog">Catalog</Link> |<Link to="cart">Cart</Link> |
           <div className="auth-info">
             {user ? (
               <>
                 <span>Hello, {user.email}</span>
                 <button onClick={() => dispatch(logout())}>Logout</button>
+                {user.email === "admin@example.com" && (
+                  <Link to="/admin">Admin Panel</Link>
+                )}
               </>
             ) : (
               <Link className="login-btn" to="auth">

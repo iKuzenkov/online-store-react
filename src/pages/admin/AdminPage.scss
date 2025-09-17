@@ -1,0 +1,44 @@
+.admin-page {
+  padding: 2rem;
+  max-width: 20%;
+  margin: 0 auto;
+
+  h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .admin-form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 0.7rem;
+    background: #2c7be5;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #1a5fc1;
+    }
+  }
+}

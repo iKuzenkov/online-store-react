@@ -1,0 +1,86 @@
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct } from "../../features/products/ProductsSlice";
+import { Navigate } from "react-router-dom";
+import "./AdminPage.scss";
+
+function AdminPage() {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+
+  if (!user || user.email !== "admin@example.com") {
+    return <Navigate to="/" />;
+  }
+
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [image, setImage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newProduct = {
+      id: Date.now(),
+      name,
+      price: Number(price),
+      category,
+      image: image,
+    };
+
+    dispatch(addProduct(newProduct));
+
+    setName("");
+    setPrice("");
+    setCategory("");
+    setImage("");
+  };
+
+  return (
+    <main className="admin-page">
+      <h1>Admin Panel</h1>
+      <form className="admin-form" onSubmit={handleSubmit}>
+        <label>
+          Name:{" "}
+          <input
+            type="text"
+            value={name}
+            required
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <label>
+          Price:{" "}
+          <input
+            type="number"
+            value={price}
+            required
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </label>
+        <label>
+          Category:{" "}
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothes">Clothes</option>
+          </select>
+        </label>
+        <label>
+          Image URL:{" "}
+          <input
+            type="text"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+        </label>
+        <button type="submit">Add product</button>
+      </form>
+    </main>
+  );
+}
+
+export default AdminPage;

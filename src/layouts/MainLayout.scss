@@ -37,6 +37,21 @@
           font-weight: bold;
         }
 
+        a {
+          background: #4b8fe7;
+          color: #fff;
+          border: none;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.85rem;
+          text-decoration: none;
+
+          &:hover {
+            background: #2159a3;
+          }
+        }
+
         button {
           background: #ff4d4f;
           color: #fff;
