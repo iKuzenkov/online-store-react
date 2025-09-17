@@ -18,10 +18,7 @@ function ProductCard({ product }) {
     <>
       <article className="product-card">
         <Link to={`/products/${product.id}`}>
-          <img
-            src={product.image || "https://via.placeholder.com/200"}
-            alt={product.name}
-          />
+          <img src={product.image} alt={product.name} />
           <h2>{product.name}</h2>
         </Link>
 

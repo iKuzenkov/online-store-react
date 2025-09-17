@@ -17,6 +17,17 @@ function AdminPage() {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -70,13 +81,15 @@ function AdminPage() {
           </select>
         </label>
         <label>
-          Image URL:{" "}
-          <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-          />
+          Image:{" "}
+          <input type="file" accept="image/*" onChange={handleImageChange} />
         </label>
+        {image && (
+          <div className="preview">
+            <p style={{ color: "red", fontSize: "0.85rem" }}>Preview:</p>
+            <img src={image} alt="preview" />
+          </div>
+        )}
         <button type="submit">Add product</button>
       </form>
     </main>

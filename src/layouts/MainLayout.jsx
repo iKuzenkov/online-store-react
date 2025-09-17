@@ -13,7 +13,7 @@ function MainLayout() {
         <h1>Online Store</h1>
         <nav>
           <Link to="/">Home</Link> |<Link to="products">Products</Link> |{" "}
-          <Link to="catalog">Catalog</Link> |<Link to="cart">Cart</Link> |
+          <Link to="cart">Cart</Link> |
           <div className="auth-info">
             {user ? (
               <>
