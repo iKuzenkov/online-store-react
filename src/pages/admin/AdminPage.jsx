@@ -49,49 +49,51 @@ function AdminPage() {
 
   return (
     <main className="admin-page">
-      <h1>Admin Panel</h1>
-      <form className="admin-form" onSubmit={handleSubmit}>
-        <label>
-          Name:{" "}
-          <input
-            type="text"
-            value={name}
-            required
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label>
-          Price:{" "}
-          <input
-            type="number"
-            value={price}
-            required
-            onChange={(e) => setPrice(e.target.value)}
-          />
-        </label>
-        <label>
-          Category:{" "}
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="books">Books</option>
-            <option value="electronics">Electronics</option>
-            <option value="clothes">Clothes</option>
-          </select>
-        </label>
-        <label>
-          Image:{" "}
-          <input type="file" accept="image/*" onChange={handleImageChange} />
-        </label>
-        {image && (
-          <div className="preview">
-            <p style={{ color: "red", fontSize: "0.85rem" }}>Preview:</p>
-            <img src={image} alt="preview" />
-          </div>
-        )}
-        <button type="submit">Add product</button>
-      </form>
+      <div className="admin-panel">
+        <h1>Admin Panel</h1>
+        <form className="admin-form" onSubmit={handleSubmit}>
+          <label>
+            Name:{" "}
+            <input
+              type="text"
+              value={name}
+              required
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+          <label>
+            Price:{" "}
+            <input
+              type="number"
+              value={price}
+              required
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </label>
+          <label>
+            Category:{" "}
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="books">Books</option>
+              <option value="electronics">Electronics</option>
+              <option value="clothes">Clothes</option>
+            </select>
+          </label>
+          <label>
+            Image:{" "}
+            <input type="file" accept="image/*" onChange={handleImageChange} />
+          </label>
+          {image && (
+            <div className="preview">
+              <p style={{ color: "red", fontSize: "0.85rem" }}>Preview:</p>
+              <img src={image} alt="preview" />
+            </div>
+          )}
+          <button type="submit">Add product</button>
+        </form>
+      </div>
     </main>
   );
 }

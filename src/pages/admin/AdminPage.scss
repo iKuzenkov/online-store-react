@@ -1,7 +1,7 @@
 .admin-page {
+  margin: 1rem auto;
+  max-width: 60vh;
   padding: 2rem;
-  max-width: 20%;
-  margin: 0 auto;
 
   h1 {
     margin-bottom: 1.5rem;
@@ -20,6 +20,7 @@
 
   input,
   select {
+    width: 99%;
     padding: 0.5rem;
     font-size: 1rem;
     margin-top: 0.25rem;
@@ -33,6 +34,7 @@
   }
 
   button {
+    width: 99%;
     padding: 0.7rem;
     background: #2c7be5;
     color: #fff;

@@ -1,9 +1,11 @@
 .pagination {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 16px;
-  flex-wrap: wrap;
 
   &__btn {
     padding: 6px 10px;

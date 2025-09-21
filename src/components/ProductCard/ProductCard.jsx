@@ -33,6 +33,7 @@ function ProductCard({ product }) {
             <button onClick={() => dispatch(decreaseQuantity(product.id))}>
               -
             </button>
+            <span>{cartItem.quantity}</span>
             <button onClick={() => dispatch(addToCart(product))}>+</button>
             <button onClick={() => dispatch(removeFromCart(product.id))}>
               Remove

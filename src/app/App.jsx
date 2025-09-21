@@ -8,7 +8,6 @@ import RegisterPage from "../pages/register/RegisterPage";
 import Auth from "../pages/auth/Auth";
 import PrivateRoute from "../components/private-route/PrivateRoute";
 import AdminPage from "../pages/admin/AdminPage";
-import Catalog from "../pages/Catalog";
 import Cart from "../pages/cart/CartPage";
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="products" element={<ProductsPage />} />
             <Route path="products/:id" element={<ProductDetails />} />
-            <Route path="catalog" element={<Catalog />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="auth" element={<Auth />} />
