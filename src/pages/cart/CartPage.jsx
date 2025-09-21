@@ -4,7 +4,7 @@ import {
   addToCart,
   decreaseQuantity,
   removeFromCart,
-} from "../../features/cart/CartSlice";
+} from "../../features/cart/cartSlice";
 import "./CartPage.scss";
 
 function CartPage() {

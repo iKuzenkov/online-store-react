@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login, clearError } from "../../features/auth/AuthSlice";
+import { register, clearError } from "../../features/auth/authSlice";
 import { useNavigate, Link } from "react-router-dom";
-import "../auth/AuthForm.scss";
+import "../Auth/AuthForm.scss";
 
-function LoginPage() {
+function RegisterPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, error } = useSelector((state) => state.auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [localError, setLocalError] = useState("");
 
   useEffect(() => {
     if (user) navigate("/");
@@ -18,7 +20,14 @@ function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(login({ email, password }));
+
+    if (password !== confirm) {
+      setLocalError("Password do not match");
+      return;
+    }
+
+    setLocalError("");
+    dispatch(register({ email, password }));
   };
 
   useEffect(() => {
@@ -28,12 +37,14 @@ function LoginPage() {
   }, [dispatch]);
 
   return (
-    <main className="login-page">
-      <h1>Login</h1>
+    <main>
+      <h1>Register</h1>
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
           Email:{" "}
           <input
+            id="email"
+            name="email"
             type="email"
             value={email}
             required
@@ -41,23 +52,35 @@ function LoginPage() {
           />
         </label>
         <label>
-          Password:{" "}
+          Password (min 6 chars):{" "}
           <input
+            id="password"
+            name="password"
             type="password"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        {error && (
-          <p style={{ color: "red", fontSize: "0.85rem" }}>
-            The user does not exist. Registration is required.
-          </p>
+        <label>
+          Confirm Password:{" "}
+          <input
+            id="confirm-password"
+            name="confirm-password"
+            type="password"
+            value={confirm}
+            required
+            onChange={(e) => setConfirm(e.target.value)}
+          />
+        </label>
+        {localError && (
+          <p style={{ color: "red", fontSize: "0.85rem" }}>{localError}</p>
         )}
-        <button type="submit">Login</button>
+        {error && <p style={{ color: "red", fontSize: "0.85rem" }}>{error}</p>}
+        <button type="submit">Register</button>
       </form>
     </main>
   );
 }
 
-export default LoginPage;
+export default RegisterPage;

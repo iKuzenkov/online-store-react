@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../../features/cart/CartSlice";
+import { addToCart } from "../../features/cart/cartSlice";
 
 function ProductsDetails() {
   const { id } = useParams();

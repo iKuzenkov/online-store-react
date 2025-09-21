@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
-import ProductsPage from "../pages/productsPage/ProductsPage";
-import ProductDetails from "../pages/productDetails/ProductDetails";
-import LoginPage from "../pages/login-page/LoginPage";
-import RegisterPage from "../pages/register/RegisterPage";
-import Auth from "../pages/auth/Auth";
-import PrivateRoute from "../components/private-route/PrivateRoute";
-import AdminPage from "../pages/admin/AdminPage";
-import Cart from "../pages/cart/CartPage";
+import ProductsPage from "../pages/ProductsPage/ProductsPage";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import Auth from "../pages/Auth/Auth";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import AdminPage from "../pages/AdminPage/AdminPage";
+import Cart from "../pages/Cart/CartPage";
 function App() {
   return (
     <>

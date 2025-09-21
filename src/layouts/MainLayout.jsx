@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../features/auth/AuthSlice";
+import { logout } from "../features/auth/authSlice";
 import "./MainLayout.scss";
 
 function MainLayout() {
