@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addProduct, removeProduct } from "../products/ProductsSlice";
+import { addProduct, removeProduct } from "../productsSlice/ProductsSlice";
 
 const initialState = {
   lastAddedId: null,

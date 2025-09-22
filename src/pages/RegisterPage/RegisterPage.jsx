@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register, clearError } from "../../features/auth/authSlice";
+import { register, clearError } from "../../features/authSlice/authSlice";
 import { useNavigate, Link } from "react-router-dom";
 import "../Auth/AuthForm.scss";
 
