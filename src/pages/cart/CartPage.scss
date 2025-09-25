@@ -1,11 +1,17 @@
 .cart-page {
-  margin: 1rem auto;
   max-width: 60rem;
+  margin: 1rem auto;
   padding: 5px;
 
   h1 {
     margin-bottom: 20px;
     text-align: center;
+  }
+
+  h2,
+  p {
+    margin: 1rem;
+    font-size: 1.5rem;
   }
 
   .cart-grid {
@@ -30,14 +36,6 @@
   }
 
   &__info {
-    h2 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-    p {
-      margin: 2px 0;
-    }
-
     &__controls {
       display: flex;
       flex-direction: column;
@@ -65,8 +63,12 @@
   }
 }
 
-.cart-total {
-  margin-top: 20px;
-  text-align: left;
-  font-size: 1.2rem;
+@media (max-width: 992px) {
+  .cart-page p {
+    margin-top: 2rem;
+  }
+  p,
+  h2.cart-total {
+    text-align: center;
+  }
 }

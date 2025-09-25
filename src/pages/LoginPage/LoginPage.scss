@@ -1,4 +1,10 @@
 .login-page {
   margin: 1rem auto;
-  max-width: 50rem;
+  max-width: 25rem;
+}
+
+@media (max-width: 992px) {
+  .login-page {
+    max-width: 20rem;
+  }
 }

@@ -97,3 +97,26 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 576px) {
+  .layout header {
+    padding: 0.1rem;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  nav,
+  .auth-info {
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    font-size: 0.8rem;
+  }
+}
