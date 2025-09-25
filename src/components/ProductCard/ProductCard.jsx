@@ -19,10 +19,9 @@ function ProductCard({ product }) {
       <article className="product-card">
         <Link to={`/products/${product.id}`}>
           <img src={product.image} alt={product.name} />
-          <h2>{product.name}</h2>
         </Link>
-
-        <p>Price: {product.price}</p>
+        <h2>{product.name}</h2>
+        <p>Price: {product.price}$</p>
         <p>Caregory: {product.category}</p>
         {!cartItem ? (
           <button onClick={() => dispatch(addToCart(product))}>
