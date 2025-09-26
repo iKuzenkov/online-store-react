@@ -40,34 +40,34 @@ function RegisterPage() {
     <main>
       <h1>Register</h1>
       <form className="auth-form" onSubmit={handleSubmit}>
-        <label>
+        <label htmlFor="email">
           Email:{" "}
           <input
-            id="email"
-            name="email"
             type="email"
+            name="email"
+            id="email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label>
+        <label htmlFor="password">
           Password (min 6 chars):{" "}
           <input
-            id="password"
-            name="password"
             type="password"
+            name="password"
+            id="password"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <label>
+        <label htmlFor="confirm-password">
           Confirm Password:{" "}
           <input
-            id="confirm-password"
-            name="confirm-password"
             type="password"
+            name="confirm-password"
+            id="confirm-password"
             value={confirm}
             required
             onChange={(e) => setConfirm(e.target.value)}

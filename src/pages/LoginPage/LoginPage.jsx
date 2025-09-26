@@ -32,19 +32,23 @@ function LoginPage() {
     <main className="login-page">
       <h1>Login</h1>
       <form className="auth-form" onSubmit={handleSubmit}>
-        <label>
+        <label htmlFor="email">
           Email:{" "}
           <input
             type="email"
+            name="email"
+            id="email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label>
+        <label htmlFor="password">
           Password:{" "}
           <input
             type="password"
+            name="password"
+            id="password"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}

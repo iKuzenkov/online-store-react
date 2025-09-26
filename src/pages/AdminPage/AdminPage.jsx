@@ -68,8 +68,9 @@ function AdminPage() {
             Name:{" "}
             <input
               type="text"
-              value={name}
+              name="name"
               id="name"
+              value={name}
               required
               onChange={(e) => {
                 const value = e.target.value;
@@ -83,13 +84,14 @@ function AdminPage() {
             />
           </label>
           {errors.name && <div className="error">{errors.name}</div>}
-          <label>
+          <label htmlFor="price">
             Price:{" "}
             <input
               type="number"
-              value={price}
               min="1"
               name="price"
+              id="price"
+              value={price}
               required
               onChange={(e) => {
                 const value = e.target.value;
@@ -103,9 +105,11 @@ function AdminPage() {
             />
           </label>
           {errors.price && <div className="error">{errors.price}</div>}
-          <label>
+          <label htmlFor="category">
             Category:{" "}
             <select
+              name="category"
+              id="category"
               value={category}
               required
               onChange={(e) => {
@@ -125,10 +129,12 @@ function AdminPage() {
             </select>
           </label>
           {errors.category && <div className="error">{errors.category}</div>}
-          <label>
+          <label htmlFor="image">
             Image:{" "}
             <input
               type="file"
+              name="image"
+              id="image"
               accept="image/*"
               required
               onChange={handleImageChange}
