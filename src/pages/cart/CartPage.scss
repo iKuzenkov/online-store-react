@@ -21,7 +21,7 @@
 
   .cart-item {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 200px 1fr auto;
     gap: 1rem;
     align-items: center;
     padding: 12px;
@@ -31,39 +31,38 @@
   }
 
   img {
+    display: block;
     max-width: 200px;
     object-fit: contain;
   }
 
-  &__info {
-    &__controls {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+  .cart-item__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    button {
-      padding: 4px 8px;
-      border: none;
-      border-radius: 6px;
-      background: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: background 0.2s ease;
+  button {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
 
-      &:hover {
-        background: #0056b3;
-      }
+    &:hover {
+      background: #0056b3;
     }
+  }
 
-    span {
-      text-align: center;
-      font-weight: bold;
-    }
+  span {
+    text-align: center;
+    font-weight: bold;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .cart-page p {
     margin-top: 2rem;
   }
