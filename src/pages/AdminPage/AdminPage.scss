@@ -1,7 +1,7 @@
 .admin-page {
-  margin: 1rem auto;
+  margin: 0 auto;
   max-width: 60vh;
-  padding: 2rem;
+  padding: 1rem;
 
   h1 {
     margin-bottom: 1.5rem;
@@ -28,9 +28,19 @@
     border-radius: 5px;
   }
 
-  .preview {
-    max-width: 100%;
-    margin-bottom: 12px;
+  .preview p {
+    max-width: max-content;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    background: #e1611b;
+    color: #e1fabb;
+  }
+
+  .preview img {
+    border-block: 2px solid #e1611b;
+    padding: 0.5rem 0;
   }
 
   button {

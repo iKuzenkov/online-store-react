@@ -20,6 +20,7 @@ function AdminPage() {
     name: "",
     price: "",
     category: "",
+    image: "",
   });
 
   const handleImageChange = (e) => {
@@ -106,6 +107,7 @@ function AdminPage() {
             Category:{" "}
             <select
               value={category}
+              required
               onChange={(e) => {
                 const value = e.target.value;
                 setCategory(value);
@@ -134,7 +136,7 @@ function AdminPage() {
           </label>
           {image && (
             <div className="preview">
-              <p style={{ color: "red", fontSize: "0.85rem" }}>Preview:</p>
+              <p>Preview:</p>
               <img src={image} alt="preview" />
             </div>
           )}
