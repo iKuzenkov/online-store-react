@@ -25,12 +25,12 @@ function ProductsDetails() {
         style={{ maxWidth: "18.75rem", marginBottom: "1.5rem" }}
       />
       <p>Category: {product.category}</p>
-      <p>Price: {product.price}</p>
+      <p>Price: {product.price}$</p>
       <p>Description: {product.description || "No description yet."}</p>
+      <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
       <Link to="/products">
         <button>Back to Products</button>
       </Link>
-      <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
     </main>
   );
 }

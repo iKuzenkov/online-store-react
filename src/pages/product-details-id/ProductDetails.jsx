@@ -2,7 +2,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart-slice/cart-slice";
-import "./ProductsDetails.scss";
 
 function ProductsDetails() {
   const { id } = useParams();
