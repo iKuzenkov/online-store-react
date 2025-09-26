@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import ProductCard from "../../components/productCard/ProductCard";
+import ProductCard from "../../components/product-card/ProductCard";
 import Pagination from "../../components/pagination/Pagination";
 import Filter from "../../components/filter/Filters";
 import Sort from "../../components/sort/Sort";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../../features/productsSlice/productsSlice";
+import { addProduct } from "../../features/products-slice/products-slice";
 import { Navigate } from "react-router-dom";
 import "./AdminPage.scss";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LoginPage from "../LoginPage/LoginPage";
-import RegisterPage from "../RegisterPage/RegisterPage";
+import LoginPage from "../login-page/LoginPage";
+import RegisterPage from "../register-page/RegisterPage";
 import "./Auth.scss";
 
 function Auth() {

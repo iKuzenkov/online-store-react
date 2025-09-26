@@ -4,7 +4,7 @@ import {
   addToCart,
   removeFromCart,
   decreaseQuantity,
-} from "../../features/cartSlice/cartSlice";
+} from "../../features/cart-slice/cart-slice";
 import { Link } from "react-router-dom";
 import "./ProductCard.scss";
 
