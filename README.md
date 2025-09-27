@@ -1,141 +1,164 @@
-# Интернет-магазин на React + Redux Toolkit
+# Online Store with React + Redux Toolkit
 
-## Описание проекта
+## Project Description
 
-Приложение — это минимальный интернет-магазин, построенный на **React + Redux Toolkit**.
-Функционал включает:
+This application is a minimal online store built with React + Redux Toolkit.
+Features include:
 
-- Регистрация и авторизация пользователей.
-- Хранение данных пользователей и корзины в **localStorage**.
-- Главная страница с товарами.
-- Добавление/удаление товаров из корзины.
-- Админ-панель для добавления новых товаров.
-- Адаптивная верстка (с поддержкой медиазапросов).
-
----
-
-## Используемые технологии
-
-- **React** (компоненты, хуки)
-- **React Router v6** (роутинг)
-- **Redux Toolkit** (глобальное состояние)
-- **SCSS** (стилизация с поддержкой вложенности)
-- **localStorage** (сохранение товаров, корзины, пользователей)
+- User registration and authorization.
+- Storing user and cart data in localStorage.
+- Main page with products.
+- Adding/removing products from the cart.
+- Admin panel for adding new products.
+- Responsive layout (with media queries support).
 
 ---
 
-## Структура проекта
+## Technologies Used
+
+- **React** (components, hooks)
+- **React Router v6** (routing)
+- **Redux Toolkit** (global state)
+- **SCSS** (styling with nesting support)
+- **localStorage** (storing products, cart, users)
+
+---
+
+## Project Structure
 
 ```
 src/
-  app/
-         App.jsx
-     store/
-         store.js
-  components/
-     filter/
-         Filter.jsx
-     pagination/
-         Pagination.jsx
-         Pagination.scss
-     private-route/
-         PrivateRoute.jsx
-     product-card/
-         ProductCard.jsx
-         ProductCard.scss
-     sort/
-         Sort.jsx
-  features/
-     admin-slice/
-         admin-slice.js
-     auth-slice/
-         auth-slice.js
-     cart-slice/
-         cart-slice.js
-     products-slice/
-         products-slice.js
-  layouts/
-         MainLayout.jsx
-         MainLayout.scss
-  pages/
-     admin-page
-     auth
-     cart
+   app/
+      App.jsx # Application Routing
+        store/
+           store.js
+   components/ # Reusable Components
+        filter/
+           Filter.jsx
+        pagination/
+           Pagination.jsx
+           Pagination.scss
+        private-route/
+           PrivateRoute.jsx
+        product-card/
+           ProductCard.jsx
+           ProductCard.scss
+        sort/
+           Sort.jsx
+   features/ # Redux Slices
+        admin-slice/
+           admin-slice.js
+        auth-slice/
+           auth-slice.js
+        cart-slice/
+           cart-slice.js
+        products-slice/
+           products-slice.js
+   layouts/ # General page layouts
+           MainLayout.jsx
+           MainLayout.scss
+   pages/ # Main pages
+        admin-page/
+           AdminPage.jsx
+           AdminPage.scss
+        auth-page/
+           Auth.jsx
+           Auth.scss
+           AuthForm.scss
+        cart-page/
+           CartPage.jsx
+           CartPage.scss
+        home-page/
+           Home.jsx
+           Home.scss
+        login-page/
+            LoginPage.jsx
+            LoginPage.scss
+        product-details-page/
+            PeoductDetails.jsx
+            PeoductDetails.scss
+        products-page/
+            ProductsPage.jsx
+            ProductsPage.scss
+        register-page/
+            RegisterPage.jsx
+   styles/
+            reset.scss (normalize)
+main.jsx # Entry Point
+
 ```
 
 ---
 
-## 🔐 Авторизация
+## Authorization
 
-- **Регистрация**: сохраняет пользователя (email + пароль) в `localStorage`.
-- **Авторизация**: сверяет введенные данные с сохраненными.
-- **Выход**: удаляет пользователя из `localStorage`.
-- **Admin-панель** доступна только для `admin@example.com`.
+- **Register**: Saves the user (email + password) to `localStorage`.
+- **Authorize**: Verifies the entered data against the saved data.
+- **Logout**: Removes the user from `localStorage`.
+- **Admin Panel** is only accessible to `admin@example.com`, password "admin1", or will be registered with `admin@example.com`.
 
 ---
 
-## 🛠️ Redux слайсы
+## Redux Slices
 
 ### AuthSlice
 
-- `register(email, password)` — регистрация и сохранение в `localStorage`.
-- `login(email, password)` — вход пользователя.
-- `logout()` — выход.
-- `clearError()` — очистка ошибок.
+- `register(email, password)` — Register and save to `localStorage`.
+- `login(email, password)` — Log the user in.
+- `logout()` — Log out.
+- `clearError()` — clear errors.
 
 ### ProductsSlice
 
-- `addProduct(product)` — добавление товара (только админ).
-- `removeProduct(id)` — удаление товара.
-- Товары сохраняются в `localStorage`.
+- `addProduct(product)` — add a product (admin only).
+- `removeProduct(id)` — delete a product.
+- Products are stored in `localStorage`.
 
 ### CartSlice
 
-- `addToCart(product)` — добавить товар.
-- `removeFromCart(id)` — удалить товар.
-- `decreaseQuantity(id)` — уменьшить количество.
-- `clearCart()` — очистить корзину.
-- Корзина синхронизируется с `localStorage`.
+- `addToCart(product)` — add a product.
+- `removeFromCart(id)` — delete a product.
+- `decreaseQuantity(id)` — decrease quantity.
+- `clearCart()` — clear the cart.
+- The cart is synced with `localStorage`.
 
 ---
 
-## 🌐 Роутинг
+## Routing
 
-- `/` — главная страница со списком товаров.
-- `/cart` — корзина.
-- `/auth/login` — страница логина.
-- `/auth/register` — регистрация.
-- `/admin` — админ-панель (**только для [admin@example.com](mailto:admin@example.com)**).
-
----
-
-## 🎨 Стилизация
-
-- Используется **SCSS** с вложенностью.
-- У каждого компонента и страницы — свой `.scss`.
-- В `MainLayout.scss` прописаны стили шапки, футера и медиазапросы.
+- `/` — main page with a product list.
+- `/products` — product page
+- `/products/:id` — product page, id dynamically determined from query parameters
+- `/cart` — cart.
+- `/auth/login` — login page.
+- `/auth/register` — registration.
+- `/admin` — admin panel (**only for [admin@example.com]**).
 
 ---
 
-## 📌 Следующие шаги (по желанию)
+## Styling
 
-- ✅ Валидация форм регистрации и входа.
-- ✅ Загрузка изображений через `<input type="file" />`.
-- 🔲 Подключение бекенда (Express.js / Firebase / Supabase).
-- 🔲 Оптимизация и разбиение по чанкам (lazy loading).
-- 🔲 Тесты (Jest + React Testing Library).
+- Nested SCSS is used.
+- Each component and page has its own `.scss`.
+- Header, footer styles, and media queries are defined in `MainLayout.scss`.
 
 ---
 
-## 🚀 Запуск проекта
+## Next Steps
+
+- Tests (Jest + React Testing Library).
+
+---
+
+## Running a project
 
 ```bash
-# Установка зависимостей
+# Installing dependencies
 npm install
 
-# Запуск dev-сервера
+# Starting the dev server
 npm run dev
 
-# Сборка проекта
+# Building a project
 npm run build
 ```
