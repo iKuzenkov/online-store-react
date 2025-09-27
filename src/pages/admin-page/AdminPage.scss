@@ -1,7 +1,10 @@
 .admin-page {
   margin: 0 auto;
-  max-width: 21rem;
   padding: 1rem;
+
+  .admin-panel {
+    margin: 0 auto;
+  }
 
   h1 {
     margin-bottom: 1.5rem;
@@ -10,7 +13,10 @@
 
   .admin-form {
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 20% 20% 20% 20%;
     gap: 1rem;
+    justify-items: center;
   }
 
   label {
