@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, clearError } from "../../features/auth-slice/auth-slice";
 import { useNavigate, Link } from "react-router-dom";
 import "./LoginPage.scss";
-import "../auth/AuthForm.scss";
+import "../auth-page/AuthForm.scss";
 
 function LoginPage() {
   const dispatch = useDispatch();

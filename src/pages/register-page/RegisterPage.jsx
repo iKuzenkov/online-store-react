@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { register, clearError } from "../../features/auth-slice/auth-slice";
 import { useNavigate, Link } from "react-router-dom";
-import "../auth/AuthForm.scss";
+import "../auth-page/AuthForm.scss";
 
 function RegisterPage() {
   const dispatch = useDispatch();
