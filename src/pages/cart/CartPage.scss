@@ -31,7 +31,6 @@
   }
 
   img {
-    display: block;
     max-width: 200px;
     object-fit: contain;
   }
@@ -62,10 +61,35 @@
   }
 }
 
-@media (max-width: 576px) {
-  .cart-page p {
-    margin-top: 2rem;
+@media (max-width: 360px) {
+  .cart-page {
+    margin: 0.1rem auto;
+    h1 {
+      margin: 0.1rem auto;
+    }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto auto;
+      gap: 0.2rem;
+
+      img {
+        margin: 0 auto;
+        max-width: 250px;
+      }
+
+      h2,
+      p {
+        margin: 0.2rem auto;
+        font-size: 1.5rem;
+      }
+
+      .cart-item__controls {
+        margin: 0.5rem auto;
+      }
+    }
   }
+
   p,
   h2.cart-total {
     text-align: center;
