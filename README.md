@@ -119,7 +119,7 @@ main.jsx # Entry point
 - **Register**: Saves the user (email + password) to `localStorage`.
 - **Authorize**: Verifies the entered data against the saved data.
 - **Logout**: Removes the user from `localStorage`.
-- **Admin Panel** is only accessible to `admin@example.com`, password "admin1".
+- **Admin Panel** is only accessible to `admin@example.com`, password "1wedDfgrRGf55FgbD".
 
 ---
 
