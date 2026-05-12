@@ -1,0 +1,122 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .auth-info {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        gap: 0.5rem;
+
+        span {
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+
+        a {
+          background: #4b8fe7;
+          color: #fff;
+          border: none;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.85rem;
+          text-decoration: none;
+
+          &:hover {
+            background: #2159a3;
+          }
+        }
+
+        button {
+          background: #ff4d4f;
+          color: #fff;
+          border: none;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.85rem;
+
+          &:hover {
+            background: #d9363e;
+          }
+        }
+
+        .login-btn {
+          background: #1890ff;
+          color: #fff;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          font-size: 0.85rem;
+
+          &:hover {
+            background: #40a9ff;
+          }
+        }
+      }
+    }
+  }
+
+  .layout-body {
+    display: flex;
+    flex: 1;
+
+    main {
+      flex: 1;
+    }
+  }
+
+  footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .layout header {
+    padding: 0.1rem;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  nav,
+  .auth-info {
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,35 @@
+.auth-page {
+  display: flex;
+  margin: 2rem auto;
+  max-width: 30rem;
+  padding: 1rem;
+  background: rgb(248, 245, 245);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgb(0, 0, 0, 0.2);
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0.5rem;
+  }
+
+  .switch-btn {
+    background: none;
+    border: none;
+    color: #0077ff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+      color: #7c7322;
+    }
+  }
+}
