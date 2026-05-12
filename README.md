@@ -26,67 +26,91 @@ Features include:
 
 ## Project Structure
 
-```
+<details>
+<summary>Open project structure</summary>
+
+```text
 src/
    app/
-      App.jsx # Application Routing
-        store/
-           store.js
-   components/ # Reusable Components
-        filter/
-           Filter.jsx
-        pagination/
-           Pagination.jsx
-           Pagination.scss
-        private-route/
-           PrivateRoute.jsx
-        product-card/
-           ProductCard.jsx
-           ProductCard.scss
-        sort/
-           Sort.jsx
-   features/ # Redux Slices
-        admin-slice/
-           admin-slice.js
-        auth-slice/
-           auth-slice.js
-        cart-slice/
-           cart-slice.js
-        products-slice/
-           products-slice.js
-   layouts/ # General page layouts
-           MainLayout.jsx
-           MainLayout.scss
-   pages/ # Main pages
-        admin-page/
-           AdminPage.jsx
-           AdminPage.scss
-        auth-page/
-           Auth.jsx
-           Auth.scss
-           AuthForm.scss
-        cart-page/
-           CartPage.jsx
-           CartPage.scss
-        home-page/
-           Home.jsx
-           Home.scss
-        login-page/
-            LoginPage.jsx
-            LoginPage.scss
-        product-details-page/
-            PeoductDetails.jsx
-            PeoductDetails.scss
-        products-page/
-            ProductsPage.jsx
-            ProductsPage.scss
-        register-page/
-            RegisterPage.jsx
-   styles/
-            reset.scss (normalize)
-main.jsx # Entry Point
+      App.jsx # Application routing
+      store/
+         store.js
 
+   components/ # Reusable components
+      filter/
+         Filter.jsx
+
+      pagination/
+         Pagination.jsx
+         Pagination.scss
+
+      private-route/
+         PrivateRoute.jsx
+
+      product-card/
+         ProductCard.jsx
+         ProductCard.scss
+
+      sort/
+         Sort.jsx
+
+   features/ # Redux slices
+      admin-slice/
+         admin-slice.js
+
+      auth-slice/
+         auth-slice.js
+
+      cart-slice/
+         cart-slice.js
+
+      products-slice/
+         products-slice.js
+
+   layouts/ # General page layouts
+      MainLayout.jsx
+      MainLayout.scss
+
+   pages/ # Main pages
+      admin-page/
+         AdminPage.jsx
+         AdminPage.scss
+
+      auth-page/
+         Auth.jsx
+         Auth.scss
+         AuthForm.scss
+
+      cart-page/
+         CartPage.jsx
+         CartPage.scss
+
+      home-page/
+         Home.jsx
+         Home.scss
+
+      login-page/
+         LoginPage.jsx
+         LoginPage.scss
+
+      product-details-page/
+         ProductDetails.jsx
+         ProductDetails.scss
+
+      products-page/
+         ProductsPage.jsx
+         ProductsPage.scss
+
+      register-page/
+         RegisterPage.jsx
+
+   styles/
+      reset.scss # Normalize / reset styles
+
+main.jsx # Entry point
 ```
+
+</details>
 
 ---
 
@@ -95,7 +119,7 @@ main.jsx # Entry Point
 - **Register**: Saves the user (email + password) to `localStorage`.
 - **Authorize**: Verifies the entered data against the saved data.
 - **Logout**: Removes the user from `localStorage`.
-- **Admin Panel** is only accessible to `admin@example.com`, password "admin1", or will be registered with `admin@example.com`.
+- **Admin Panel** is only accessible to `admin@example.com`, password "admin1".
 
 ---
 
